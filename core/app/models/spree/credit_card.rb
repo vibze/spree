@@ -102,8 +102,8 @@ module Spree
     end
 
     def set_last_digits
-      number.to_s.gsub!(/\s/, '')
-      verification_value.to_s.gsub!(/\s/, '')
+      number.to_s.gsub(/\s/, '')
+      verification_value.to_s.gsub(/\s/, '')
       self.last_digits ||= number.to_s.length <= 4 ? number : number.to_s.slice(-4..-1)
     end
 
